@@ -1,66 +1,180 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# TuSabor - Sistema de Gestión Gastronómica
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Logo TuSabor](docs\images\logo.png)  <!-- Reemplazar con el enlace al logo subido a GitHub -->
 
-## About Laravel
+**TuSabor** es un sistema de gestión integral para restaurantes, desarrollado en Laravel 10. La plataforma unifica dos modelos de negocio críticos (reservas de mesas y pedidos a domicilio) y potencia la atención al cliente con un chatbot basado en Inteligencia Artificial.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+##  Características Principales
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   **Doble Modelo de Negocio:** Gestión simultánea de reservas presenciales y e-commerce para delivery.
+-   **Arquitectura MVC:** Código organizado, escalable y mantenible siguiendo las mejores prácticas de Laravel.
+-   **Panel de Administración Completo:** Dashboard con métricas en tiempo real y CRUDs para productos, categorías, mesas, pedidos y reservas.
+-   **Autenticación Dual:** Perfiles de **Cliente** y **Administrador** con permisos y vistas diferenciadas.
+-   **Base de Datos Optimizada:** MySQL con 5+ procedimientos almacenados para consultas críticas.
+-   **Asistente Virtual con IA:** Chatbot 24/7 para resolver dudas, recomendar productos y asistir en la navegación.
+-   **Experiencia de Usuario Premium:** Interfaz responsive, intuitiva y con una identidad visual de alta gama.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+##  Guía de Instalación Rápida
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Prerrequisitos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   PHP >= 8.1
+-   Composer
+-   Node.js & NPM
+-   Servidor de base de datos (MySQL 8.0 recomendado)
 
-## Laravel Sponsors
+### Pasos de Instalación
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone https://github.com/tu-usuario/tusabor.git
+    cd tusabor
+    ```
 
-### Premium Partners
+2.  **Instalar dependencias de PHP:**
+    ```bash
+    composer install
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+3.  **Instalar dependencias de Node.js:**
+    ```bash
+    npm install && npm run build
+    ```
 
-## Contributing
+4.  **Configurar el entorno:**
+    -   Copia el archivo `.env.example` a `.env`:
+        ```bash
+        cp .env.example .env
+        ```
+    -   Genera la clave de la aplicación:
+        ```bash
+        php artisan key:generate
+        ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5.  **Configurar la Base de Datos:**
+    -   Abre el archivo `.env` y configura las credenciales de tu base de datos:
+        ```env
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=tusabor
+        DB_USERNAME=root
+        DB_PASSWORD=
+        ```
+    -   Crea la base de datos `tusabor` en tu gestor de MySQL.
 
-## Code of Conduct
+6.  **Ejecutar Migraciones y Seeders:**
+    -   Esto creará las tablas y poblará la base de datos con datos de ejemplo (usuarios, categorías, productos, mesas).
+        ```bash
+        php artisan migrate --seed
+        ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7.  **Importar Procedimientos Almacenados:**
+    -   Importa los archivos SQL ubicados en `database/stored_procedures/` en tu base de datos. (Ej: `sp_verificar_disponibilidad_mesa.sql`)
 
-## Security Vulnerabilities
+8.  **Crear el enlace simbólico para el almacenamiento:**
+    ```bash
+    php artisan storage:link
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+9.  **Iniciar el servidor de desarrollo:**
+    ```bash
+    php artisan serve
+    ```
 
-## License
+10. **Acceder a la aplicación:**
+    -   Abre tu navegador y visita: `http://127.0.0.1:8000`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Credenciales de Acceso (Seeders)
+
+-   **Administrador:**
+    -   **Email:** `admin@tusabor.com`
+    -   **Contraseña:** `password`
+-   **Cliente:**
+    -   **Email:** `cliente@tusabor.com`
+    -   **Contraseña:** `password`
+
+---
+
+##  Stack Tecnológico
+
+-   **Backend:** Laravel 10 (PHP 8.1)
+-   **Frontend:** Blade Templates, Bootstrap 5, JavaScript, jQuery, AJAX
+-   **Base de Datos:** MySQL 8.0
+-   **Inteligencia Artificial:** [Especificar API usada: OpenAI, Gemini, etc.]
+-   **Servidor:** Apache/Nginx (compatible con Laravel)
+
+---
+
+## 📂 Estructura del Proyecto
+
+El proyecto sigue la estructura estándar de Laravel, con las siguientes personalizaciones clave:
+
+```
+/app
+|-- Http
+|   |-- Controllers
+|       |-- Admin/      # Controladores para el panel de admin
+|       |-- Cliente/    # Controladores para el perfil de cliente
+|       |-- Auth/       # Controladores de autenticación
+|-- Models/         # Modelos Eloquent (Producto, Reserva, Pedido, etc.)
+|-- Providers/
+
+/database
+|-- migrations/     # Migraciones de la base de datos
+|-- seeders/        # Seeders para poblar la BD con datos de prueba
+|-- stored_procedures/ # Scripts SQL de los procedimientos almacenados
+
+/resources
+|-- views
+|   |-- admin/        # Vistas del panel de admin
+|   |-- cliente/      # Vistas del perfil de cliente
+|   |-- auth/
+|   |-- layouts/
+|-- css/
+|-- js/
+
+/routes
+|-- web.php         # Rutas agrupadas por middleware (auth, admin)
+
+```
+
+---
+
+##  Funcionalidades Clave
+
+### Perfil del Cliente
+
+-   [x] **Autenticación:** Registro y Login.
+-   [x] **Catálogo de Productos:** Con filtros y modal de detalles.
+-   [x] **Carrito de Compras:** Dinámico y persistente en la sesión.
+-   [x] **Sistema de Reservas:** Con selector visual de mesas y verificación en tiempo real.
+-   [x] **Gestión de Cuenta:** Historial de pedidos y reservas.
+-   [x] **Chatbot con IA:** Asistencia 24/7.
+
+### Perfil del Administrador
+
+-   [x] **Dashboard:** Métricas clave del negocio.
+-   [x] **CRUD de Productos:** Gestión completa del catálogo.
+-   [x] **CRUD de Categorías y Mesas:** Configuración del restaurante.
+-   [x] **Gestión de Pedidos:** Actualización de estados y seguimiento.
+-   [x] **Gestión de Reservas:** Confirmación y cancelación de reservas.
+
+---
+
+## 📄 Licencia
+
+Este proyecto se distribuye bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
+---
+
+## 👨‍💻 Autores
+
+-   **Daniella Micaela Leon Andres**
+-   **Harold Salvador Zarate**
+
+Proyecto desarrollado para el curso de **Base de Datos** en **Tecsup**.
