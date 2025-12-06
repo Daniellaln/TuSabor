@@ -1,6 +1,6 @@
 # TuSabor - Sistema de Gestión Gastronómica
 
-![Logo TuSabor](docs\images\logo.png)  <!-- Reemplazar con el enlace al logo subido a GitHub -->
+![Logo TuSabor](docs/images/logo.png)  <!-- Reemplazar con el enlace al logo subido a GitHub -->
 
 **TuSabor** es un sistema de gestión integral para restaurantes, desarrollado en Laravel 10. La plataforma unifica dos modelos de negocio críticos (reservas de mesas y pedidos a domicilio) y potencia la atención al cliente con un chatbot basado en Inteligencia Artificial.
 
