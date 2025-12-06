@@ -1,0 +1,139 @@
+/* TuSabor - Estilos Personalizados - Elegancia Casual */
+:root {
+    --color-borgona: #8B1538;
+    --color-borgona-dark: #6B0F28;
+    --color-dorado: #D4AF37;
+    --color-dorado-dark: #B8941F;
+    --color-crema: #F5F5DC;
+    --color-beige: #FAF8F3;
+    --color-blanco: #FFFFFF;
+    --color-gris-texto: #4A4A4A;
+    --color-fondo: #FAFAFA;
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-gris-texto);
+    line-height: 1.6;
+    background-color: var(--color-fondo);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-borgona);
+    font-weight: 700;
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-dorado);
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.btn-borgona {
+    background: linear-gradient(135deg, var(--color-borgona) 0%, var(--color-borgona-dark) 100%);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-borgona:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 21, 56, 0.4);
+    color: white;
+}
+
+.product-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.product-card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-card .card-title {
+    font-family: var(--font-display);
+    color: var(--color-borgona);
+    font-size: 1.25rem;
+}
+
+.product-card .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-borgona);
+}
+
+.table-elegant {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.table-elegant thead {
+    background: var(--color-beige);
+}
+
+.table-elegant thead th {
+    color: var(--color-borgona);
+    font-weight: 600;
+    border: none;
+    padding: 16px;
+}
+
+.table-elegant tbody tr:hover {
+    background: var(--color-beige);
+}
+
+.sidebar-admin {
+    background: white;
+    box-shadow: var(--shadow-sm);
+    min-height: 100vh;
+    padding: 24px 0;
+}
+
+.sidebar-admin .nav-link {
+    color: var(--color-gris-texto);
+    padding: 12px 24px;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.sidebar-admin .nav-link:hover,
+.sidebar-admin .nav-link.active {
+    background: var(--color-beige);
+    color: var(--color-borgona);
+    border-left-color: var(--color-borgona);
+}
+
+.sidebar-admin .nav-link i {
+    margin-right: 12px;
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,62 @@
+@extends('layouts.app')
+
+@section('title', 'TuSabor - Donde la tradición se encuentra con la innovación')
+
+@section('content')
+<style>
+.hero-welcome {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('{{ asset("images/hero-bg.jpg") }}');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+</style>
+
+<div class="hero-welcome">
+    <div class="container">
+        <h1 class="logo-text" style="font-size: 5rem; color: #D4AF37; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">TuSabor</h1>
+        <p class="tagline" style="color: #F5F5DC; font-size: 1.2rem; margin: 24px 0;">Donde la tradición se encuentra con la innovación</p>
+        <div class="mt-5">
+            <a href="{{ route('login') }}" class="btn btn-borgona btn-lg me-3">
+                <i class="fas fa-sign-in-alt me-2"></i>Iniciar Sesión
+            </a>
+            <a href="{{ route('register') }}" class="btn btn-dorado btn-lg">
+                <i class="fas fa-user-plus me-2"></i>Registrarse
+            </a>
+        </div>
+    </div>
+</div>
+
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="icon-circle mx-auto mb-3">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Menú Gourmet</h3>
+                <p>Platos elaborados con ingredientes frescos y de temporada</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="icon-circle gold mx-auto mb-3">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Delivery Rápido</h3>
+                <p>Llevamos la experiencia TuSabor a tu hogar</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="icon-circle mx-auto mb-3">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3>Reserva tu Mesa</h3>
+                <p>Asegura tu lugar en momentos especiales</p>
+            </div>
+        </div>
+    </div>
+</section>
+@endsection

@@ -1,0 +1,313 @@
+/* ============================================
+   TUSABOR - Estilos Personalizados
+   Paleta de colores de restaurante fino
+   ============================================ */
+
+:root {
+    /* Colores principales */
+    --color-borgoña: #8B1538;
+    --color-dorado: #D4AF37;
+    --color-crema: #F5F5DC;
+    --color-negro: #2C2C2C;
+    --color-verde-oliva: #556B2F;
+    --color-gris-claro: #F8F9FA;
+    --color-gris-medio: #6C757D;
+    
+    /* Sombras */
+    --sombra-suave: 0 2px 4px rgba(0,0,0,0.1);
+    --sombra-media: 0 4px 6px rgba(0,0,0,0.1);
+    --sombra-fuerte: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Tipografía */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-negro);
+    background-color: var(--color-crema);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--color-borgoña);
+}
+
+/* Botones primarios */
+.btn-primary {
+    background-color: var(--color-borgoña);
+    border-color: var(--color-borgoña);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #6B0F2A;
+    border-color: #6B0F2A;
+}
+
+/* Botones secundarios */
+.btn-secondary {
+    background-color: var(--color-dorado);
+    border-color: var(--color-dorado);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #B8941F;
+    border-color: #B8941F;
+}
+
+/* Navbar */
+.navbar-tusabor {
+    background-color: var(--color-borgoña);
+    box-shadow: var(--sombra-media);
+}
+
+.navbar-tusabor .navbar-brand,
+.navbar-tusabor .nav-link {
+    color: white !important;
+}
+
+.navbar-tusabor .nav-link:hover {
+    color: var(--color-dorado) !important;
+}
+
+/* Cards de productos */
+.card-producto {
+    border: none;
+    border-radius: 8px;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+}
+
+.card-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-fuerte);
+}
+
+.card-producto .card-title {
+    color: var(--color-borgoña);
+    font-weight: 600;
+}
+
+.card-producto .precio {
+    color: var(--color-dorado);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Badge de estado */
+.badge-pendiente {
+    background-color: #FFC107;
+    color: #000;
+}
+
+.badge-confirmada {
+    background-color: #28A745;
+}
+
+.badge-cancelada {
+    background-color: #DC3545;
+}
+
+.badge-completada {
+    background-color: #6C757D;
+}
+
+.badge-preparando {
+    background-color: #17A2B8;
+}
+
+.badge-en-camino {
+    background-color: #007BFF;
+}
+
+.badge-entregado {
+    background-color: #28A745;
+}
+
+/* Dashboard stats cards */
+.stat-card {
+    border-left: 4px solid var(--color-borgoña);
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--sombra-suave);
+}
+
+.stat-card .stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-borgoña);
+}
+
+.stat-card .stat-label {
+    color: var(--color-gris-medio);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+/* Chatbot */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chatbot-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-borgoña);
+    color: white;
+    border: none;
+    box-shadow: var(--sombra-fuerte);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.chatbot-button:hover {
+    background-color: #6B0F2A;
+}
+
+.chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--sombra-fuerte);
+    display: none;
+    flex-direction: column;
+}
+
+.chatbot-window.active {
+    display: flex;
+}
+
+.chatbot-header {
+    background-color: var(--color-borgoña);
+    color: white;
+    padding: 1rem;
+    border-radius: 12px 12px 0 0;
+    font-weight: 600;
+}
+
+.chatbot-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: var(--color-gris-claro);
+}
+
+.chatbot-message {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.chatbot-message.user {
+    background-color: var(--color-borgoña);
+    color: white;
+    margin-left: auto;
+}
+
+.chatbot-message.bot {
+    background-color: white;
+    color: var(--color-negro);
+    box-shadow: var(--sombra-suave);
+}
+
+.chatbot-input {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.chatbot-input input {
+    flex: 1;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+}
+
+.chatbot-input button {
+    background-color: var(--color-borgoña);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* Tabla responsiva */
+.table-tusabor {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+}
+
+.table-tusabor thead {
+    background-color: var(--color-borgoña);
+    color: white;
+}
+
+.table-tusabor tbody tr:hover {
+    background-color: var(--color-gris-claro);
+}
+
+/* Formularios */
+.form-control:focus {
+    border-color: var(--color-borgoña);
+    box-shadow: 0 0 0 0.2rem rgba(139, 21, 56, 0.25);
+}
+
+.form-label {
+    color: var(--color-negro);
+    font-weight: 500;
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(rgba(139, 21, 56, 0.7), rgba(139, 21, 56, 0.7)), 
+                url('/images/hero-bg.jpg') center/cover;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section .btn {
+    margin: 0.5rem;
+}
+
+/* Footer */
+.footer-tusabor {
+    background-color: var(--color-negro);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer-tusabor a {
+    color: var(--color-dorado);
+    text-decoration: none;
+}
+
+.footer-tusabor a:hover {
+    color: white;
+}
